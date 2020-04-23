@@ -10,7 +10,7 @@ class _TD1MRZFormatParser {
       input.length == _linesCount &&
       input.every((s) => s.length == _linesLength);
 
-  static MRZResult parse(List<String> input) {
+  static MRZResult parse(List<String> input, bool performDigitCheckValidation) {
     if (!isValidInput(input)) {
       return null;
     }
@@ -65,7 +65,7 @@ class _TD1MRZFormatParser {
       return null;
     }
 
-    if (finalCheckDigitRaw != null) {
+    if (finalCheckDigitRaw != null && performDigitCheckValidation) {
       final finalCheckDigit =
           MRZFieldFormatter.formatCheckDigit(finalCheckDigitRaw);
       final finalCheckString = documentNumber +

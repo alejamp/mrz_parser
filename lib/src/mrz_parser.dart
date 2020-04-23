@@ -12,17 +12,17 @@ part 'td3_format_mrz_parser.dart';
 class MRZParser {
   MRZParser._();
 
-  static MRZResult parse(List<String> input) {
+  static MRZResult parse(List<String> input, {bool performDigitCheckValidation = false}) {
     input = _polishInput(input);
     if (input == null) {
       return null;
     }
 
     if (_TD1MRZFormatParser.isValidInput(input)) {
-      return _TD1MRZFormatParser.parse(input);
+      return _TD1MRZFormatParser.parse(input, performDigitCheckValidation);
     }
     if (_TD2MRZFormatParser.isValidInput(input)) {
-      return _TD2MRZFormatParser.parse(input);
+      return _TD2MRZFormatParser.parse(input, );
     }
     if (_TD3MRZFormatParser.isValidInput(input)) {
       return _TD3MRZFormatParser.parse(input);
