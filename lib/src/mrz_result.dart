@@ -13,6 +13,7 @@ class MRZResult {
     this.expiryDate,
     this.personalNumber,
     this.personalNumber2,
+    this.sexRaw
   });
 
   final String documentType;
@@ -26,6 +27,7 @@ class MRZResult {
   final DateTime expiryDate;
   final String personalNumber;
   final String personalNumber2;
+  final String sexRaw;
 
   @override
   bool operator ==(Object other) =>

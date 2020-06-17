@@ -100,6 +100,7 @@ class _TD2MRZFormatParser {
       nationalityCountryCode: nationality,
       birthDate: birthDate,
       sex: sex,
+      sexRaw: sexRaw,
       expiryDate: expiryDate,
       personalNumber: optionalData,
       personalNumber2: null,
